@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+
+  <ion-searchbar placeholder="Buscar album" inputmode="text" (ionChange)="searchChange($event)" [debounce]="250"
+    animated></ion-searchbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngFor="let album of albumes | filtro:textoBuscar:'title'">
+    <ion-item>
+      <ion-label>{{album.title}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,3 +1,40 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-split-pane contentId="main" when="md">
+    
+    <ion-menu side="start" menuId="first" contentId="main">
+      <ion-header>
+        <ion-toolbar>
+          <ion-item class="ion-padding">
+            <ion-avatar slot="start">
+              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            </ion-avatar>
+            <ion-label>
+              <h3>Miguel Martínez</h3>
+              <p>miguel.martinez88@outlook.es</p>
+            </ion-label>
+          </ion-item>
+        </ion-toolbar>
+      </ion-header>
+  
+      <ion-content>
+  
+        <ion-list>
+          <ion-menu-toggle *ngFor="let c of componentes | async" autoHide="false">
+            <ion-item [routerLink]="c.redirectTo" detail>
+              <ion-icon slot="start" [name]="c.icon" color="primary"></ion-icon>
+              <ion-label>{{c.name}}1</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+  
+      </ion-content>
+  
+    </ion-menu>
+  
+    <ion-router-outlet id="main"></ion-router-outlet>
+
+  </ion-split-pane>
+
+  
 </ion-app>
