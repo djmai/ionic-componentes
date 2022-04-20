@@ -22,7 +22,7 @@ export class ModalInfoPage implements OnInit {
 
   salirConArgumentos(){
     this.modalCtrl.dismiss({
-      nombre: 'Manuel',
+      nombre: 'Nombre',
       pais: 'España'
     });
   }

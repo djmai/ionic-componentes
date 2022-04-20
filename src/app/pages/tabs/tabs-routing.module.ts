@@ -22,6 +22,10 @@ const routes: Routes = [
         loadChildren: () => import('../list/list.module').then(m => m.ListPageModule)
       },
       {
+        path: 'modal',
+        loadChildren: () => import('../modal/modal.module').then(m => m.ModalPageModule)
+      },
+      {
         path: 'settings',
         loadChildren: () => import('../infinite/infinite.module').then(m => m.InfinitePageModule)
       },

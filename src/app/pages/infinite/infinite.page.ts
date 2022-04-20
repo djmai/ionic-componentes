@@ -35,7 +35,7 @@ export class InfinitePage implements OnInit {
   }
 
   // New
-  loadData() {
+  loadData(event) {
     setTimeout(() => {
 
       if (this.data.length > 50) {
